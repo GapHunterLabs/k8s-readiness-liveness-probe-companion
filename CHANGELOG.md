@@ -1,0 +1,18 @@
+<!-- Keep a Changelog guide -> https://keepachangelog.com -->
+
+# Kubernetes Missing Readiness/Liveness Probe Companion Changelog
+
+## [Unreleased]
+
+## [0.1.0]
+
+### Added
+
+- New inspection: flags a container entry in a Kubernetes workload
+  manifest (Deployment, Pod, StatefulSet, DaemonSet) with no
+  `readinessProbe:` and/or no `livenessProbe:`. Indentation-based text
+  scanner, no real YAML parser needed; Job/CronJob manifests are out
+  of scope since they aren't kept behind a load balancer.
+
+[Unreleased]: https://github.com/GapHunterLabs/k8s-readiness-liveness-probe-companion/compare/0.1.0...HEAD
+[0.1.0]: https://github.com/GapHunterLabs/k8s-readiness-liveness-probe-companion/commits/0.1.0

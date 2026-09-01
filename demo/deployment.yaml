@@ -1,0 +1,26 @@
+kind: Deployment
+metadata:
+  name: acmecorp-orders
+spec:
+  template:
+    spec:
+      containers:
+        # No readinessProbe or livenessProbe at all -- flagged twice.
+        - name: orders-api
+          image: acmecorp/orders-api:1.4.0
+
+        # Has both probes -- not flagged.
+        - name: orders-worker
+          image: acmecorp/orders-worker:1.4.0
+          readinessProbe:
+            httpGet:
+              path: /healthz/ready
+              port: 8080
+            initialDelaySeconds: 5
+            periodSeconds: 10
+          livenessProbe:
+            httpGet:
+              path: /healthz/live
+              port: 8080
+            initialDelaySeconds: 15
+            periodSeconds: 20
