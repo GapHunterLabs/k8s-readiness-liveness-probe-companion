@@ -8,6 +8,12 @@ being routed to a broken instance. Without a liveness probe, a hung
 (not crashed) process is never automatically restarted. Both are a
 real, recurring cause of documented availability incidents.
 
+## Screenshots
+
+![Screenshot 1](docs/screenshots/Screenshot_1.png)
+
+![Screenshot 2](docs/screenshots/Screenshot_2.png)
+
 ## Why it exists
 
 Kubernetes never requires either probe — a manifest with neither is
