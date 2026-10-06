@@ -1,0 +1,10 @@
+<html>
+<body>
+Reports a container in a Kubernetes workload manifest (Deployment, Pod, StatefulSet, DaemonSet) that has no
+<code>readinessProbe</code>, no <code>livenessProbe</code>, or neither.
+<!-- tooltip end -->
+<p>Without a readiness probe, Kubernetes keeps sending traffic to a pod that cannot serve it. Without a liveness
+probe, a hung process is never restarted. The check is a line-based scan of the manifest, so it works without the
+Kubernetes or YAML plugins.</p>
+</body>
+</html>
